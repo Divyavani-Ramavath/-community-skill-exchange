@@ -1,51 +1,276 @@
+/* =====================================================
+   SKILLCONNECT - GLOBAL STYLES
+   Community Skill Exchange & Learning Network
+   ===================================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --primary: #4f46e5;
+    --primary-dark: #3730a3;
+    --secondary: #7c3aed;
+
+    --background: #f8fafc;
+    --surface: #ffffff;
+
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+
+    --border: #e5e7eb;
+
+    --success: #16a34a;
+    --warning: #f59e0b;
+    --danger: #dc2626;
+
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+    --container: 1200px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background: #f5f7fb;
-    color: #1f2937;
-}
-
-header {
-    padding: 30px;
-    text-align: center;
-    background: #ffffff;
-}
-
-main {
-    max-width: 1000px;
-    margin: 60px auto;
-    padding: 20px;
-}
-
-section {
-    text-align: center;
-    padding: 60px 20px;
-    background: #ffffff;
-    border-radius: 16px;
-}
-
-h1 {
-    margin-bottom: 10px;
-}
-
-h2 {
-    margin-bottom: 15px;
-}
-
-p {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text-primary);
     line-height: 1.6;
 }
 
-button {
-    margin-top: 25px;
-    padding: 12px 24px;
+/* Container */
+
+.container {
+    width: min(92%, var(--container));
+    margin: 0 auto;
+}
+
+/* Links */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Buttons */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 11px 20px;
+
     border: none;
-    border-radius: 8px;
+    border-radius: var(--radius-md);
+
+    font-size: 15px;
+    font-weight: 600;
+
     cursor: pointer;
-    font-size: 16px;
+
+    transition: 0.2s ease;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: #ede9fe;
+    color: var(--primary-dark);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+/* Cards */
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Forms */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 600;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 12px 14px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    background: white;
+    color: var(--text-primary);
+
+    font-size: 15px;
+    outline: none;
+
+    transition: 0.2s ease;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.form-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Page header */
+
+.page-header {
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    font-size: 30px;
+    margin-bottom: 6px;
+}
+
+.page-header p {
+    color: var(--text-secondary);
+}
+
+/* Badge */
+
+.badge {
+    display: inline-flex;
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-primary {
+    background: #ede9fe;
+    color: var(--primary-dark);
+}
+
+.badge-success {
+    background: #dcfce7;
+    color: #166534;
+}
+
+/* Utilities */
+
+.text-center {
+    text-align: center;
+}
+
+.text-muted {
+    color: var(--text-secondary);
+}
+
+.hidden {
+    display: none !important;
+}
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.hero {
+    min-height: calc(100vh - 72px);
+
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            #e0e7ff,
+            transparent 40%
+        );
+}
+
+.hero-content {
+    max-width: 760px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    margin-top: 20px;
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero p {
+    max-width: 650px;
+    margin: 25px auto;
+    color: var(--text-secondary);
+    font-size: 18px;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: calc(100vh - 64px);
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
 }

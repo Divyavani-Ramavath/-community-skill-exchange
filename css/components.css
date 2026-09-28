@@ -1,0 +1,54 @@
+/* =====================================================
+   NAVBAR
+   ===================================================== */
+
+.navbar {
+    background: #ffffff;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-content {
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
