@@ -27,3 +27,14 @@
         padding: 18px;
     }
 }
+@media (max-width: 700px) {
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
