@@ -104,3 +104,418 @@
     margin: 0;
     font-size: 14px;
 }
+/* =====================================================
+   AUTHENTICATION
+   ===================================================== */
+
+.auth-page {
+    min-height: calc(100vh - 72px);
+
+    display: flex;
+    align-items: center;
+
+    padding: 60px 0;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #e0e7ff,
+            transparent 35%
+        );
+}
+
+.auth-container {
+    max-width: 1050px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+    align-items: center;
+}
+
+
+/* Authentication information */
+
+.auth-info {
+    padding: 20px;
+}
+
+.auth-info h1 {
+    margin-top: 20px;
+
+    font-size: clamp(42px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+}
+
+.auth-info h1 span {
+    color: var(--primary);
+}
+
+.auth-info > p {
+    margin-top: 24px;
+
+    max-width: 500px;
+
+    color: var(--text-secondary);
+    font-size: 17px;
+}
+
+
+/* Benefits */
+
+.auth-benefits {
+    margin-top: 35px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.benefit-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.benefit-icon {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #ede9fe;
+    color: var(--primary);
+
+    font-weight: 700;
+}
+
+.benefit-item h3 {
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.benefit-item p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+
+/* Authentication card */
+
+.auth-card {
+    background: var(--surface);
+
+    padding: 38px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-md);
+}
+
+.auth-header {
+    margin-bottom: 28px;
+}
+
+.auth-header h2 {
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+.auth-header p {
+    color: var(--text-secondary);
+}
+
+
+/* Checkbox */
+
+.form-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+
+    margin-bottom: 20px;
+
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.form-checkbox input {
+    margin-top: 4px;
+}
+
+
+/* Submit button */
+
+.auth-submit {
+    width: 100%;
+}
+
+
+/* Authentication messages */
+
+.auth-message {
+    min-height: 20px;
+
+    margin-bottom: 15px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.auth-message.success {
+    color: var(--success);
+}
+
+.auth-message.error {
+    color: var(--danger);
+}
+
+
+/* Authentication footer */
+
+.auth-footer {
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid var(--border);
+
+    text-align: center;
+}
+
+.auth-footer p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.auth-footer a {
+    color: var(--primary);
+    font-weight: 600;
+}
+/* =====================================================
+   LOGIN PAGE
+   ===================================================== */
+
+/* =====================================================
+   AUTH SECTION
+   ===================================================== */
+
+.auth-section {
+    min-height: calc(100vh - 140px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+/* =====================================================
+   AUTHENTICATION LAYOUT
+   ===================================================== */
+
+.auth-page {
+    min-height: calc(100vh - 140px);
+    padding: 60px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.auth-page .auth-container {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 70px;
+    align-items: center;
+}
+
+/* Left information section */
+
+.auth-info {
+    padding: 20px;
+}
+
+.auth-info h1 {
+    font-size: 4rem;
+    line-height: 1.05;
+    margin: 25px 0;
+}
+
+.auth-info h1 span {
+    color: var(--primary-color);
+}
+
+.auth-info > p {
+    max-width: 560px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+/* Benefits */
+
+.auth-benefits {
+    margin-top: 35px;
+}
+
+.benefit-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.benefit-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: var(--primary-light);
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.benefit-item h3 {
+    margin: 0 0 5px;
+}
+
+.benefit-item p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+/* Registration card */
+
+.auth-page .auth-card {
+    width: 100%;
+    box-sizing: border-box;
+
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 35px;
+
+    box-shadow: var(--shadow-md);
+}
+
+.auth-page .auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-page .auth-header h2 {
+    margin: 0 0 10px;
+}
+
+.auth-page .auth-header p {
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+/* Form */
+
+.auth-page .form-group {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.auth-page .form-input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.auth-submit {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.auth-footer p {
+    color: var(--text-secondary);
+}
+
+.auth-footer a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Login page only */
+.login-page .auth-container {
+    max-width: 480px;
+}
+
+/* Registration page */
+.register-page .auth-container {
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-header h1 {
+    margin: 18px 0 10px;
+}
+
+.auth-header p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.auth-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-full {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.auth-footer p {
+    color: var(--text-secondary);
+}
+
+.auth-footer a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}

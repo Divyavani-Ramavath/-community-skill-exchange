@@ -9,9 +9,15 @@
 
 function loadNavbar() {
 
-    const navbar = document.getElementById("navbar");
+    const navbar =
+        document.getElementById("navbar");
 
     if (!navbar) return;
+
+    const loggedIn =
+        typeof isLoggedIn === "function" &&
+        isLoggedIn();
+
 
     navbar.innerHTML = `
         <nav class="navbar">
@@ -19,8 +25,8 @@ function loadNavbar() {
             <div class="container navbar-content">
 
                 <a href="index.html" class="logo">
-                    Community-Skill-Exchange
-                </a>
+                    Community-Skill-Exchange                </a>
+
 
                 <div class="nav-links">
 
@@ -36,27 +42,49 @@ function loadNavbar() {
                         Matches
                     </a>
 
-                    <a href="dashboard.html">
-                        Dashboard
-                    </a>
+                    ${
+                        loggedIn
+                            ? `
+                                <a href="dashboard.html">
+                                    Dashboard
+                                </a>
 
-                    <a href="profile.html">
-                        Profile
-                    </a>
+                                <a href="profile.html">
+                                    Profile
+                                </a>
+                              `
+                            : ""
+                    }
 
                 </div>
 
+
                 <div class="nav-actions">
 
-                    <a href="login.html"
-                       class="btn btn-outline">
-                        Login
-                    </a>
+                    ${
+                        loggedIn
+                            ? `
+                                <button
+                                    type="button"
+                                    class="btn btn-outline"
+                                    id="logoutButton">
+                                    Logout
+                                </button>
+                              `
+                            : `
+                                <a
+                                    href="login.html"
+                                    class="btn btn-outline">
+                                    Login
+                                </a>
 
-                    <a href="register.html"
-                       class="btn btn-primary">
-                        Get Started
-                    </a>
+                                <a
+                                    href="register.html"
+                                    class="btn btn-primary">
+                                    Get Started
+                                </a>
+                              `
+                    }
 
                 </div>
 

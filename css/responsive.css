@@ -38,3 +38,97 @@
         gap: 15px;
     }
 }
+/* =====================================================
+   AUTHENTICATION RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 850px) {
+
+    .auth-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        max-width: 600px;
+    }
+
+    .auth-info {
+        text-align: center;
+    }
+
+    .auth-info > p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .auth-benefits {
+        text-align: left;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .auth-page {
+        padding: 30px 0;
+    }
+
+    .auth-card {
+        padding: 25px 20px;
+    }
+
+    .auth-info h1 {
+        font-size: 42px;
+    }
+
+    .auth-header h2 {
+        font-size: 24px;
+    }
+}
+/* =====================================================
+   AUTH RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .auth-page .auth-container {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        gap: 30px;
+    }
+
+    .auth-info {
+        text-align: center;
+    }
+
+    .auth-info > p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .benefit-item {
+        text-align: left;
+    }
+
+    .auth-info h1 {
+        font-size: 3rem;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .auth-page {
+        padding: 40px 15px;
+    }
+
+    .auth-page .auth-card {
+        padding: 25px 20px;
+    }
+
+    .auth-info {
+        padding: 10px;
+    }
+
+    .auth-info h1 {
+        font-size: 2.4rem;
+    }
+}
