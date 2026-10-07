@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Settings | Community-Skill-Exchange
+    </title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="container">
+
+        <div class="brand">
+            Community-Skill-Exchange
+        </div>
+
+        <nav class="nav-links">
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+            <a href="skills.html">
+                Skills
+            </a>
+
+            <a href="discover.html">
+                Discover
+            </a>
+
+            <a href="matches.html">
+                Matches
+            </a>
+
+            <a href="exchange.html">
+                Exchange
+            </a>
+
+            <a href="goals.html">
+                Goals
+            </a>
+
+            <a href="activities.html">
+                Activities
+            </a>
+
+            <a href="achievements.html">
+                Achievements
+            </a>
+
+            <a href="analytics.html">
+                Analytics
+            </a>
+
+            <a href="recommendations.html">
+                Recommendations
+            </a>
+
+            <a
+                href="settings.html"
+                class="active"
+            >
+                Settings
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <section class="page-header">
+
+        <div>
+
+            <h1>
+                Settings
+            </h1>
+
+            <p>
+                Manage your Community-Skill-Exchange
+                data and account preferences.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPORT -->
+
+    <section class="card">
+
+        <div class="section-header">
+
+            <div>
+
+                <h2>
+                    Export Your Data
+                </h2>
+
+                <p>
+                    Download your learning data
+                    for backup or personal use.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="cards-grid">
+
+            <article class="card">
+
+                <h3>
+                    Complete Data
+                </h3>
+
+                <p>
+                    Export your profile, skills,
+                    goals, activities, achievements
+                    and exchange requests.
+                </p>
+
+                <button
+                    id="exportJSONButton"
+                    class="btn btn-primary"
+                >
+                    Download JSON
+                </button>
+
+            </article>
+
+
+            <article class="card">
+
+                <h3>
+                    Skills
+                </h3>
+
+                <p>
+                    Export all your skills as
+                    a CSV file.
+                </p>
+
+                <button
+                    id="exportSkillsButton"
+                    class="btn btn-secondary"
+                >
+                    Download Skills
+                </button>
+
+            </article>
+
+
+            <article class="card">
+
+                <h3>
+                    Goals
+                </h3>
+
+                <p>
+                    Export your learning goals
+                    as a CSV file.
+                </p>
+
+                <button
+                    id="exportGoalsButton"
+                    class="btn btn-secondary"
+                >
+                    Download Goals
+                </button>
+
+            </article>
+
+
+            <article class="card">
+
+                <h3>
+                    Activities
+                </h3>
+
+                <p>
+                    Export your learning activities
+                    as a CSV file.
+                </p>
+
+                <button
+                    id="exportActivitiesButton"
+                    class="btn btn-secondary"
+                >
+                    Download Activities
+                </button>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- DATA STORAGE -->
+
+    <section class="card">
+
+        <div class="section-header">
+
+            <div>
+
+                <h2>
+                    Local Data Storage
+                </h2>
+
+                <p>
+                    Community-Skill-Exchange stores
+                    your project data locally in
+                    your browser.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="empty-state">
+
+            <h3>
+                Your data stays in this browser
+            </h3>
+
+            <p>
+                Because this project uses LocalStorage,
+                clearing your browser's site data can
+                remove your saved project information.
+                Export your data regularly if you need
+                a backup.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- NAVIGATION -->
+
+    <section class="card">
+
+        <div class="section-header">
+
+            <div>
+
+                <h2>
+                    Quick Navigation
+                </h2>
+
+                <p>
+                    Continue working on your
+                    learning journey.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            style="
+                display: flex;
+                flex-wrap: wrap;
+                gap: 12px;
+            "
+        >
+
+            <a
+                href="dashboard.html"
+                class="btn btn-primary"
+            >
+                Dashboard
+            </a>
+
+            <a
+                href="profile.html"
+                class="btn btn-secondary"
+            >
+                Profile
+            </a>
+
+            <a
+                href="analytics.html"
+                class="btn btn-secondary"
+            >
+                Analytics
+            </a>
+
+            <a
+                href="recommendations.html"
+                class="btn btn-secondary"
+            >
+                Recommendations
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="js/storage.js"></script>
+<script src="js/common.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+
+</html>

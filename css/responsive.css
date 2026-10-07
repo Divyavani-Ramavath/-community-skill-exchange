@@ -1,134 +1,316 @@
-@media (max-width: 900px) {
+/* =====================================================
+   COMMUNITY-SKILL-EXCHANGE
+   RESPONSIVE DESIGN
+   PHASE 14
+   ===================================================== */
+
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 1024px) {
+
+    .container {
+        width: 92%;
+    }
+
 
     .nav-links {
-        display: none;
+        gap: 12px;
+        flex-wrap: wrap;
     }
 
-    .navbar-content {
-        min-height: 64px;
+
+    .nav-links a {
+        font-size: 14px;
     }
 
-    .page-header h1 {
-        font-size: 26px;
+
+    .stats-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
     }
+
+
+    .dashboard-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .cards-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .page-header {
+        gap: 20px;
+    }
+
 }
 
-@media (max-width: 500px) {
 
-    .nav-actions .btn-outline {
-        display: none;
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+    /* ---------- GENERAL ---------- */
+
+    .container {
+        width: 94%;
+        max-width: 100%;
     }
 
-    .logo {
-        font-size: 20px;
+
+    body {
+        overflow-x: hidden;
     }
+
+
+    /* ---------- TOPBAR ---------- */
+
+    .topbar {
+        position: relative;
+    }
+
+
+    .topbar .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+
+    .brand {
+        font-size: 18px;
+    }
+
+
+    .nav-links {
+        width: 100%;
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 6px;
+    }
+
+
+    .nav-links a {
+        white-space: nowrap;
+        font-size: 13px;
+        padding: 7px 10px;
+    }
+
+
+    /* ---------- PAGE HEADER ---------- */
+
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+
+    .page-header h1 {
+        font-size: 28px;
+    }
+
+
+    /* ---------- GRIDS ---------- */
+
+    .stats-grid,
+    .dashboard-grid,
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* ---------- CARDS ---------- */
 
     .card {
         padding: 18px;
     }
-}
-@media (max-width: 700px) {
 
-    .footer-content {
+
+    .stat-card {
+        padding: 18px;
+    }
+
+
+    .stat-card h3 {
+        font-size: 26px;
+    }
+
+
+    /* ---------- SECTION HEADERS ---------- */
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+
+    /* ---------- BUTTONS ---------- */
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    /* ---------- FORMS ---------- */
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .form-actions {
         flex-direction: column;
     }
 
-    .footer-links {
-        flex-wrap: wrap;
-        gap: 15px;
+
+    /* ---------- DASHBOARD ---------- */
+
+    .progress-overview {
+        flex-direction: column;
+        align-items: flex-start;
     }
+
+
+    .progress-details {
+        width: 100%;
+    }
+
+
+    .dashboard-activity {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+
+    /* ---------- COMMUNITY ---------- */
+
+    .community-stats {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* ---------- MODALS ---------- */
+
+    .modal {
+        padding: 12px;
+    }
+
+
+    .modal-content {
+        width: 100%;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+
+    /* ---------- TABLES ---------- */
+
+    .table-container {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+
+    table {
+        min-width: 650px;
+    }
+
+
+    /* ---------- PROFILE ---------- */
+
+    .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    /* ---------- PROGRESS ---------- */
+
+    .progress-circle-wrapper {
+        margin: 0 auto;
+    }
+
+
+    /* ---------- SETTINGS ---------- */
+
+    .settings-grid {
+        grid-template-columns: 1fr;
+    }
+
 }
+
+
 /* =====================================================
-   AUTHENTICATION RESPONSIVE
+   SMALL MOBILE
    ===================================================== */
 
-@media (max-width: 850px) {
+@media (max-width: 480px) {
 
-    .auth-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        max-width: 600px;
+    .container {
+        width: 92%;
     }
 
-    .auth-info {
-        text-align: center;
+
+    .brand {
+        font-size: 16px;
     }
 
-    .auth-info > p {
-        margin-left: auto;
-        margin-right: auto;
-    }
 
-    .auth-benefits {
-        text-align: left;
-    }
-}
-
-
-@media (max-width: 500px) {
-
-    .auth-page {
-        padding: 30px 0;
-    }
-
-    .auth-card {
-        padding: 25px 20px;
-    }
-
-    .auth-info h1 {
-        font-size: 42px;
-    }
-
-    .auth-header h2 {
+    .page-header h1 {
         font-size: 24px;
     }
-}
-/* =====================================================
-   AUTH RESPONSIVE
-   ===================================================== */
 
-@media (max-width: 900px) {
 
-    .auth-page .auth-container {
-        grid-template-columns: 1fr;
-        max-width: 600px;
-        gap: 30px;
+    .page-header p {
+        font-size: 14px;
     }
 
-    .auth-info {
-        text-align: center;
+
+    .card {
+        padding: 15px;
     }
 
-    .auth-info > p {
-        margin-left: auto;
-        margin-right: auto;
+
+    .stat-card {
+        padding: 15px;
     }
 
-    .benefit-item {
-        text-align: left;
+
+    .stat-card h3 {
+        font-size: 23px;
     }
 
-    .auth-info h1 {
-        font-size: 3rem;
-    }
-}
 
-
-@media (max-width: 600px) {
-
-    .auth-page {
-        padding: 40px 15px;
+    .nav-links a {
+        font-size: 12px;
+        padding: 6px 8px;
     }
 
-    .auth-page .auth-card {
-        padding: 25px 20px;
+
+    input,
+    select,
+    textarea {
+        font-size: 16px;
     }
 
-    .auth-info {
-        padding: 10px;
+
+    .modal-content {
+        padding: 18px;
     }
 
-    .auth-info h1 {
-        font-size: 2.4rem;
-    }
 }

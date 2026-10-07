@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Goals | Community-Skill-Exchange</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/components.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
+
+</head>
+
+<body>
+
+    <header class="topbar">
+
+        <div class="container">
+
+            <div class="brand">
+                Community-Skill-Exchange
+            </div>
+
+            <nav class="nav-links">
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="profile.html">
+                    Profile
+                </a>
+
+                <a href="skills.html">
+                    Skills
+                </a>
+
+                <a href="discover.html">
+                    Discover
+                </a>
+
+                <a href="matches.html">
+                    Matches
+                </a>
+
+                <a href="exchange.html">
+                    Exchange
+                </a>
+
+                <a
+                    href="goals.html"
+                    class="active"
+                >
+                    Goals
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <section class="page-header">
+
+            <div>
+
+                <h1>
+                    Learning Goals
+                </h1>
+
+                <p>
+                    Set clear goals and track your learning progress.
+                </p>
+
+            </div>
+
+            <button
+                type="button"
+                class="btn btn-primary"
+                id="addGoalBtn"
+            >
+                + Add Goal
+            </button>
+
+        </section>
+
+
+        <!-- GOAL STATISTICS -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <h3 id="totalGoals">
+                    0
+                </h3>
+
+                <p>
+                    Total Goals
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3 id="activeGoals">
+                    0
+                </h3>
+
+                <p>
+                    Active Goals
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3 id="completedGoals">
+                    0
+                </h3>
+
+                <p>
+                    Completed
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3 id="averageProgress">
+                    0%
+                </h3>
+
+                <p>
+                    Average Progress
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FILTERS -->
+
+        <section class="card">
+
+            <div class="form-group">
+
+                <label for="goalFilter">
+                    Filter Goals
+                </label>
+
+                <select id="goalFilter">
+
+                    <option value="all">
+                        All Goals
+                    </option>
+
+                    <option value="active">
+                        Active
+                    </option>
+
+                    <option value="completed">
+                        Completed
+                    </option>
+
+                    <option value="paused">
+                        Paused
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <!-- GOALS -->
+
+        <section>
+
+            <div
+                id="goalsContainer"
+                class="cards-grid"
+            >
+
+            </div>
+
+            <div
+                id="emptyGoals"
+                class="empty-state"
+                style="display: none;"
+            >
+
+                <h3>
+                    No goals yet
+                </h3>
+
+                <p>
+                    Create your first learning goal to start tracking your progress.
+                </p>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="emptyAddGoalBtn"
+                >
+                    Create Your First Goal
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- GOAL MODAL -->
+
+    <div
+        id="goalModal"
+        class="modal"
+        style="display: none;"
+    >
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2 id="goalModalTitle">
+                    Create Learning Goal
+                </h2>
+
+                <button
+                    type="button"
+                    id="closeGoalModal"
+                    class="modal-close"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+
+            <form id="goalForm">
+
+                <input
+                    type="hidden"
+                    id="goalId"
+                >
+
+
+                <div class="form-group">
+
+                    <label for="goalTitle">
+                        Goal Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="goalTitle"
+                        placeholder="Example: Learn JavaScript"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="goalDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="goalDescription"
+                        rows="4"
+                        placeholder="Describe what you want to achieve..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="goalCategory">
+                        Category
+                    </label>
+
+                    <select
+                        id="goalCategory"
+                        required
+                    >
+
+                        <option value="">
+                            Select category
+                        </option>
+
+                        <option value="Programming">
+                            Programming
+                        </option>
+
+                        <option value="Design">
+                            Design
+                        </option>
+
+                        <option value="Communication">
+                            Communication
+                        </option>
+
+                        <option value="Business">
+                            Business
+                        </option>
+
+                        <option value="Academic">
+                            Academic
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="goalTargetDate">
+                        Target Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="goalTargetDate"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="goalProgress">
+                        Progress: <span id="progressValue">0%</span>
+                    </label>
+
+                    <input
+                        type="range"
+                        id="goalProgress"
+                        min="0"
+                        max="100"
+                        value="0"
+                    >
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="cancelGoalBtn"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                    >
+                        Save Goal
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/storage.js"></script>
+
+    <script src="js/common.js"></script>
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

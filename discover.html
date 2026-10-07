@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Discover | Community-Skill-Exchange
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/components.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================================
+         NAVBAR
+    ================================================== -->
+
+    <div id="navbar"></div>
+
+
+    <!-- =================================================
+         MAIN
+    ================================================== -->
+
+    <main class="discover-page">
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="discover-hero">
+
+            <div class="container">
+
+                <div class="discover-hero-content">
+
+                    <span class="badge badge-primary">
+                        Community Discovery
+                    </span>
+
+
+                    <h1>
+
+                        Discover People.
+                        <span>Share Skills.</span>
+
+                    </h1>
+
+
+                    <p>
+
+                        Find community members who can teach
+                        the skills you want to learn and people
+                        who want to learn what you can teach.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             DISCOVERY CONTENT
+        ================================================== -->
+
+        <section class="section">
+
+            <div class="container">
+
+
+                <!-- =================================================
+                     SEARCH / FILTER CARD
+                ================================================== -->
+
+                <section class="discover-filter-card">
+
+
+                    <div class="discover-filter-header">
+
+                        <div>
+
+                            <span class="card-icon">
+                                🔎
+                            </span>
+
+
+                            <div>
+
+                                <h2>
+                                    Find Community Members
+                                </h2>
+
+                                <p>
+                                    Search by name or skill.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="discover-filters">
+
+
+                        <!-- Search -->
+
+                        <div class="form-group">
+
+                            <label for="discoverSearch">
+                                Search
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="discoverSearch"
+                                placeholder="Search by name or skill..."
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+
+
+                        <!-- Skill Type -->
+
+                        <div class="form-group">
+
+                            <label for="discoverType">
+                                Skill Type
+                            </label>
+
+
+                            <select id="discoverType">
+
+                                <option value="all">
+                                    All Skills
+                                </option>
+
+                                <option value="teaching">
+                                    Can Teach
+                                </option>
+
+                                <option value="learning">
+                                    Wants to Learn
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- Category -->
+
+                        <div class="form-group">
+
+                            <label for="discoverCategory">
+                                Category
+                            </label>
+
+
+                            <select id="discoverCategory">
+
+                                <option value="all">
+                                    All Categories
+                                </option>
+
+                                <option value="Programming">
+                                    Programming
+                                </option>
+
+                                <option value="Web Development">
+                                    Web Development
+                                </option>
+
+                                <option value="Data Science">
+                                    Data Science
+                                </option>
+
+                                <option value="AI & Machine Learning">
+                                    AI & Machine Learning
+                                </option>
+
+                                <option value="Cybersecurity">
+                                    Cybersecurity
+                                </option>
+
+                                <option value="Database">
+                                    Database
+                                </option>
+
+                                <option value="Cloud Computing">
+                                    Cloud Computing
+                                </option>
+
+                                <option value="Design">
+                                    Design
+                                </option>
+
+                                <option value="Communication">
+                                    Communication
+                                </option>
+
+                                <option value="Business">
+                                    Business
+                                </option>
+
+                                <option value="Languages">
+                                    Languages
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="discover-filter-actions">
+
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            id="clearDiscoverFilters"
+                        >
+                            Clear Filters
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     RESULTS HEADER
+                ================================================== -->
+
+                <div class="discover-results-header">
+
+                    <div>
+
+                        <span class="badge badge-primary">
+                            Community
+                        </span>
+
+                        <h2>
+                            Community Members
+                        </h2>
+
+                        <p id="discoverResultCount">
+                            Loading members...
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     RESULTS
+                ================================================== -->
+
+                <div
+                    id="discoverResults"
+                    class="discover-results"
+                ></div>
+
+
+
+                <!-- =================================================
+                     EMPTY RESULT
+                ================================================== -->
+
+                <div
+                    id="discoverEmpty"
+                    class="discover-empty"
+                    style="display: none;"
+                >
+
+                    <div class="discover-empty-icon">
+                        🔎
+                    </div>
+
+                    <h3>
+                        No members found
+                    </h3>
+
+                    <p>
+                        Try changing your search or filters.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="emptyClearFilters"
+                    >
+                        Clear Filters
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================== -->
+
+    <div id="footer"></div>
+
+
+
+    <!-- =================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <script src="js/storage.js"></script>
+
+    <script src="js/common.js"></script>
+
+    <script src="js/auth.js"></script>
+
+
+    <script>
+        protectPage();
+    </script>
+
+
+    <script src="js/app.js"></script>
+
+
+</body>
+
+</html>

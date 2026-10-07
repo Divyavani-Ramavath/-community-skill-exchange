@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Knowledge Exchange | Community-Skill-Exchange
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/components.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =================================================
+         NAVBAR
+         ================================================= -->
+
+    <div id="navbar"></div>
+
+
+    <!-- =================================================
+         MAIN CONTENT
+         ================================================= -->
+
+    <main class="exchange-page">
+
+
+        <!-- =================================================
+             HERO SECTION
+             ================================================= -->
+
+        <section class="exchange-hero">
+
+            <div class="container">
+
+                <div class="exchange-hero-content">
+
+                    <span class="badge badge-primary">
+                        Knowledge Exchange
+                    </span>
+
+                    <h1>
+
+                        Learn.
+                        <span>Teach.</span>
+                        Grow Together.
+
+                    </h1>
+
+                    <p>
+
+                        Connect with community members,
+                        exchange knowledge, and build
+                        meaningful learning partnerships.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             EXCHANGE CONTENT
+             ================================================= -->
+
+        <section class="exchange-section">
+
+            <div class="container">
+
+
+                <!-- =================================================
+                     PAGE HEADER
+                     ================================================= -->
+
+                <div class="exchange-page-header">
+
+                    <div>
+
+                        <h2>
+                            Knowledge Exchange
+                        </h2>
+
+                        <p>
+                            Send and manage your skill
+                            exchange requests.
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="openExchangeModal"
+                    >
+                        + New Exchange Request
+                    </button>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     STATISTICS
+                     ================================================= -->
+
+                <div class="exchange-stats">
+
+
+                    <div class="exchange-stat-card">
+
+                        <div class="exchange-stat-icon">
+                            📤
+                        </div>
+
+                        <div>
+
+                            <span
+                                id="sentRequestCount"
+                                class="exchange-stat-number"
+                            >
+                                0
+                            </span>
+
+                            <span class="exchange-stat-label">
+                                Sent Requests
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="exchange-stat-card">
+
+                        <div class="exchange-stat-icon">
+                            📥
+                        </div>
+
+                        <div>
+
+                            <span
+                                id="receivedRequestCount"
+                                class="exchange-stat-number"
+                            >
+                                0
+                            </span>
+
+                            <span class="exchange-stat-label">
+                                Received Requests
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="exchange-stat-card">
+
+                        <div class="exchange-stat-icon">
+                            ⏳
+                        </div>
+
+                        <div>
+
+                            <span
+                                id="pendingRequestCount"
+                                class="exchange-stat-number"
+                            >
+                                0
+                            </span>
+
+                            <span class="exchange-stat-label">
+                                Pending
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="exchange-stat-card">
+
+                        <div class="exchange-stat-icon">
+                            🤝
+                        </div>
+
+                        <div>
+
+                            <span
+                                id="acceptedRequestCount"
+                                class="exchange-stat-number"
+                            >
+                                0
+                            </span>
+
+                            <span class="exchange-stat-label">
+                                Accepted
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     REQUEST TABS
+                     ================================================= -->
+
+                <div class="exchange-tabs">
+
+                    <button
+                        type="button"
+                        class="exchange-tab active"
+                        data-tab="received"
+                    >
+                        Received Requests
+                    </button>
+
+                    <button
+                        type="button"
+                        class="exchange-tab"
+                        data-tab="sent"
+                    >
+                        Sent Requests
+                    </button>
+
+                    <button
+                        type="button"
+                        class="exchange-tab"
+                        data-tab="all"
+                    >
+                        All Exchanges
+                    </button>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     REQUEST RESULTS
+                     ================================================= -->
+
+                <div
+                    id="exchangeResults"
+                    class="exchange-results"
+                ></div>
+
+
+                <!-- =================================================
+                     EMPTY STATE
+                     ================================================= -->
+
+                <div
+                    id="exchangeEmpty"
+                    class="exchange-empty"
+                    style="display: none;"
+                >
+
+                    <div class="exchange-empty-icon">
+                        🤝
+                    </div>
+
+                    <h3>
+                        No exchange requests yet
+                    </h3>
+
+                    <p>
+                        Start sharing your knowledge by
+                        creating your first exchange request.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="emptyCreateExchange"
+                    >
+                        Create Exchange Request
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =================================================
+         CREATE EXCHANGE MODAL
+         ================================================= -->
+
+    <div
+        id="exchangeModal"
+        class="exchange-modal"
+        style="display: none;"
+    >
+
+        <div class="exchange-modal-overlay"></div>
+
+
+        <div class="exchange-modal-content">
+
+
+            <div class="exchange-modal-header">
+
+                <div>
+
+                    <span class="badge badge-primary">
+                        New Exchange
+                    </span>
+
+                    <h2>
+                        Create Skill Exchange
+                    </h2>
+
+                    <p>
+                        Choose a community member and
+                        start a knowledge exchange.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="exchange-modal-close"
+                    id="closeExchangeModal"
+                    aria-label="Close"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FORM
+                 ================================================= -->
+
+            <form
+                id="exchangeForm"
+                class="exchange-form"
+            >
+
+
+                <!-- MEMBER -->
+
+                <div class="form-group">
+
+                    <label for="exchangeMember">
+                        Community Member
+                    </label>
+
+                    <select
+                        id="exchangeMember"
+                        class="form-input"
+                        required
+                    >
+
+                        <option value="">
+                            Select a member
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- SKILL -->
+
+                <div class="form-group">
+
+                    <label for="exchangeSkill">
+                        Skill
+                    </label>
+
+                    <select
+                        id="exchangeSkill"
+                        class="form-input"
+                        required
+                    >
+
+                        <option value="">
+                            Select a skill
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- EXCHANGE TYPE -->
+
+                <div class="form-group">
+
+                    <label for="exchangeType">
+                        Exchange Type
+                    </label>
+
+                    <select
+                        id="exchangeType"
+                        class="form-input"
+                        required
+                    >
+
+                        <option value="">
+                            Select exchange type
+                        </option>
+
+                        <option value="learn">
+                            I want to learn this skill
+                        </option>
+
+                        <option value="teach">
+                            I want to teach this skill
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- MESSAGE -->
+
+                <div class="form-group">
+
+                    <label for="exchangeMessage">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="exchangeMessage"
+                        class="form-input"
+                        rows="4"
+                        maxlength="500"
+                        placeholder="Write a short message..."
+                    ></textarea>
+
+                    <small class="form-help">
+                        Maximum 500 characters.
+                    </small>
+
+                </div>
+
+
+
+                <!-- FORM ACTIONS -->
+
+                <div class="exchange-form-actions">
+
+                    <button
+                        type="button"
+                        class="btn btn-outline"
+                        id="cancelExchange"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                    >
+                        Send Request
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         FOOTER
+         ================================================= -->
+
+    <div id="footer"></div>
+
+
+
+    <!-- =================================================
+         JAVASCRIPT
+         ================================================= -->
+
+    <script src="js/storage.js"></script>
+
+    <script src="js/common.js"></script>
+
+    <script src="js/auth.js"></script>
+
+    <script>
+
+        protectPage();
+
+    </script>
+
+    <script src="js/app.js"></script>
+
+
+</body>
+
+</html>

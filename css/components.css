@@ -519,3 +519,158 @@
 .auth-footer a:hover {
     text-decoration: underline;
 }
+/* =====================================================
+   PHASE 13
+   UI POLISH
+   ===================================================== */
+
+.card {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+
+.btn {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+
+.empty-state {
+    padding: 32px;
+    text-align: center;
+}
+
+
+.empty-state h3 {
+    margin-bottom: 8px;
+}
+
+
+.empty-state p {
+    margin-bottom: 18px;
+}
+
+
+.section-header {
+    gap: 20px;
+}
+
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+}
+
+
+.dashboard-activity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+
+.dashboard-activity:last-child {
+    border-bottom: none;
+}
+
+
+.dashboard-activity div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+
+.profile-completion {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+
+.profile-progress-bar {
+    flex: 1;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+
+.community-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+
+.community-stats div {
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+}
+
+
+.community-stats strong {
+    display: block;
+    font-size: 28px;
+}
+
+
+.community-stats span {
+    display: block;
+    margin-top: 5px;
+}
+
+
+.achievement-earned {
+    border-top: 4px solid #16a34a;
+}
+
+
+.achievement-locked {
+    opacity: 0.8;
+}
+
+
+.goal-summary {
+    min-height: 180px;
+}
+
+
+@media (max-width: 768px) {
+
+    .dashboard-activity {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+
+    .community-stats {
+        grid-template-columns: 1fr;
+    }
+
+
+    .profile-completion {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+}

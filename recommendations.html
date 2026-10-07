@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Recommendations | Community-Skill-Exchange
+    </title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="container">
+
+        <div class="brand">
+            Community-Skill-Exchange
+        </div>
+
+        <nav class="nav-links">
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="profile.html">
+                Profile
+            </a>
+
+            <a href="skills.html">
+                Skills
+            </a>
+
+            <a href="discover.html">
+                Discover
+            </a>
+
+            <a href="matches.html">
+                Matches
+            </a>
+
+            <a href="exchange.html">
+                Exchange
+            </a>
+
+            <a href="goals.html">
+                Goals
+            </a>
+
+            <a href="activities.html">
+                Activities
+            </a>
+
+            <a href="achievements.html">
+                Achievements
+            </a>
+
+            <a href="analytics.html">
+                Analytics
+            </a>
+
+            <a
+                href="recommendations.html"
+                class="active"
+            >
+                Recommendations
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <section class="page-header">
+
+        <div>
+
+            <h1>
+                Smart Recommendations
+            </h1>
+
+            <p>
+                Personalized suggestions based on
+                your skills, goals and learning activity.
+            </p>
+
+        </div>
+
+        <a
+            href="dashboard.html"
+            class="btn btn-secondary"
+        >
+            Back to Dashboard
+        </a>
+
+    </section>
+
+
+    <!-- Recommendation Summary -->
+
+    <section class="stats-grid">
+
+        <div class="stat-card">
+
+            <h3 id="recommendationSkillCount">
+                0
+            </h3>
+
+            <p>
+                Skill Suggestions
+            </p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <h3 id="recommendationPeopleCount">
+                0
+            </h3>
+
+            <p>
+                People Suggestions
+            </p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <h3 id="recommendationGoalCount">
+                0
+            </h3>
+
+            <p>
+                Learning Actions
+            </p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <h3 id="recommendationTotalCount">
+                0
+            </h3>
+
+            <p>
+                Total Recommendations
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skill Recommendations -->
+
+    <section class="card">
+
+        <div class="section-header">
+
+            <div>
+
+                <h2>
+                    🎯 Skills You May Like
+                </h2>
+
+                <p>
+                    Skills related to the skills
+                    you already have.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="skillRecommendations"
+            class="cards-grid"
+        ></div>
+
+    </section>
+
+
+    <!-- People Recommendations -->
+
+    <section class="card">
+
+        <div class="section-header">
+
+            <div>
+
+                <h2>
+                    👥 People You May Want to Connect With
+                </h2>
+
+                <p>
+                    Community members who can help
+                    you expand your skills.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="peopleRecommendations"
+            class="cards-grid"
+        ></div>
+
+    </section>
+
+
+    <!-- Learning Recommendations -->
+
+    <section class="card">
+
+        <div class="section-header">
+
+            <div>
+
+                <h2>
+                    📚 Learning Actions
+                </h2>
+
+                <p>
+                    Suggestions based on your
+                    current learning progress.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="learningRecommendations"
+            class="cards-grid"
+        ></div>
+
+    </section>
+
+
+    <!-- Next Actions -->
+
+    <section class="card">
+
+        <div class="section-header">
+
+            <div>
+
+                <h2>
+                    🚀 Recommended Next Steps
+                </h2>
+
+                <p>
+                    Simple actions that can improve
+                    your learning journey.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="nextActions"
+            class="cards-grid"
+        ></div>
+
+    </section>
+
+</main>
+
+
+<script src="js/storage.js"></script>
+<script src="js/common.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+
+</html>

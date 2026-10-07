@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Matches | Community-Skill-Exchange
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/components.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div id="navbar"></div>
+
+
+    <main class="matches-page">
+
+        <!-- HERO -->
+
+        <section class="matches-hero">
+
+            <div class="container">
+
+                <div class="matches-hero-content">
+
+                    <span class="badge badge-primary">
+                        Skill Matching
+                    </span>
+
+                    <h1>
+                        Find Your
+                        <span>Perfect Skill Partner</span>
+                    </h1>
+
+                    <p>
+                        Discover community members whose
+                        skills complement yours and build
+                        meaningful knowledge exchanges.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MATCHING AREA -->
+
+        <section class="matches-section">
+
+            <div class="container">
+
+
+                <!-- FILTER CARD -->
+
+                <div class="match-filter-card">
+
+                    <div class="match-filter-header">
+
+                        <div>
+
+                            <h2>
+                                Your Skill Matches
+                            </h2>
+
+                            <p>
+                                Matches are based on
+                                skills you teach and
+                                skills you want to learn.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="match-filters">
+
+                        <div class="match-filter-group">
+
+                            <label
+                                for="matchSearch"
+                            >
+                                Search
+                            </label>
+
+                            <input
+                                type="search"
+                                id="matchSearch"
+                                class="form-input"
+                                placeholder="Search by name or skill..."
+                            >
+
+                        </div>
+
+
+                        <div class="match-filter-group">
+
+                            <label
+                                for="matchScore"
+                            >
+                                Match Strength
+                            </label>
+
+                            <select
+                                id="matchScore"
+                                class="form-input"
+                            >
+
+                                <option value="all">
+                                    All Matches
+                                </option>
+
+                                <option value="high">
+                                    High Match — 75%+
+                                </option>
+
+                                <option value="medium">
+                                    Good Match — 50–74%
+                                </option>
+
+                                <option value="potential">
+                                    Potential Match — Below 50%
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="match-filter-actions">
+
+                            <button
+                                type="button"
+                                id="clearMatchFilters"
+                                class="btn btn-outline"
+                            >
+                                Clear Filters
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RESULT HEADER -->
+
+                <div class="matches-results-header">
+
+                    <div>
+
+                        <span
+                            id="matchesResultCount"
+                        >
+                            0 matches found
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MATCH RESULTS -->
+
+                <div
+                    id="matchesResults"
+                    class="matches-results"
+                ></div>
+
+
+                <!-- EMPTY STATE -->
+
+                <div
+                    id="matchesEmpty"
+                    class="matches-empty"
+                    style="display: none;"
+                >
+
+                    <div class="matches-empty-icon">
+                        🔍
+                    </div>
+
+                    <h3>
+                        No skill matches found
+                    </h3>
+
+                    <p>
+                        Add more teaching and learning
+                        skills to your profile to find
+                        better matches.
+                    </p>
+
+                    <a
+                        href="skills.html"
+                        class="btn btn-primary"
+                    >
+                        Manage My Skills
+                    </a>
+
+                    <button
+                        type="button"
+                        id="emptyMatchClear"
+                        class="btn btn-secondary"
+                    >
+                        Clear Filters
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <div id="footer"></div>
+
+
+    <script src="js/storage.js"></script>
+
+    <script src="js/common.js"></script>
+
+    <script src="js/auth.js"></script>
+
+    <script>
+        protectPage();
+    </script>
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Activities | Community-Skill-Exchange
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/components.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
+
+</head>
+
+<body>
+
+    <header class="topbar">
+
+        <div class="container">
+
+            <div class="brand">
+                Community-Skill-Exchange
+            </div>
+
+            <nav class="nav-links">
+
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+
+                <a href="profile.html">
+                    Profile
+                </a>
+
+                <a href="skills.html">
+                    Skills
+                </a>
+
+                <a href="discover.html">
+                    Discover
+                </a>
+
+                <a href="matches.html">
+                    Matches
+                </a>
+
+                <a href="exchange.html">
+                    Exchange
+                </a>
+
+                <a href="goals.html">
+                    Goals
+                </a>
+
+                <a
+                    href="activities.html"
+                    class="active"
+                >
+                    Activities
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <!-- PAGE HEADER -->
+
+        <section class="page-header">
+
+            <div>
+
+                <h1>
+                    Learning Activities
+                </h1>
+
+                <p>
+                    Record your learning journey and keep track of what you accomplish.
+                </p>
+
+            </div>
+
+            <button
+                type="button"
+                class="btn btn-primary"
+                id="addActivityBtn"
+            >
+                + Add Activity
+            </button>
+
+        </section>
+
+
+        <!-- STATISTICS -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <h3 id="totalActivities">
+                    0
+                </h3>
+
+                <p>
+                    Total Activities
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3 id="totalLearningHours">
+                    0h
+                </h3>
+
+                <p>
+                    Learning Time
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3 id="thisMonthActivities">
+                    0
+                </h3>
+
+                <p>
+                    This Month
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3 id="skillsPracticed">
+                    0
+                </h3>
+
+                <p>
+                    Skills Practiced
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FILTER -->
+
+        <section class="card">
+
+            <div class="form-group">
+
+                <label for="activityFilter">
+                    Activity Type
+                </label>
+
+                <select id="activityFilter">
+
+                    <option value="all">
+                        All Activities
+                    </option>
+
+                    <option value="course">
+                        Course
+                    </option>
+
+                    <option value="practice">
+                        Practice
+                    </option>
+
+                    <option value="project">
+                        Project
+                    </option>
+
+                    <option value="workshop">
+                        Workshop
+                    </option>
+
+                    <option value="reading">
+                        Reading
+                    </option>
+
+                    <option value="other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <!-- ACTIVITY LIST -->
+
+        <section>
+
+            <div
+                id="activitiesContainer"
+                class="cards-grid"
+            >
+            </div>
+
+
+            <div
+                id="emptyActivities"
+                class="empty-state"
+                style="display: none;"
+            >
+
+                <h3>
+                    No learning activities yet
+                </h3>
+
+                <p>
+                    Start recording your learning journey by adding an activity.
+                </p>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="emptyAddActivityBtn"
+                >
+                    Add Your First Activity
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ACTIVITY MODAL -->
+
+    <div
+        id="activityModal"
+        class="modal"
+        style="display: none;"
+    >
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2 id="activityModalTitle">
+                    Add Learning Activity
+                </h2>
+
+                <button
+                    type="button"
+                    id="closeActivityModal"
+                    class="modal-close"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+
+            <form id="activityForm">
+
+                <input
+                    type="hidden"
+                    id="activityId"
+                >
+
+
+                <div class="form-group">
+
+                    <label for="activityTitle">
+                        Activity Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="activityTitle"
+                        placeholder="Example: Completed JavaScript Arrays Practice"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="activityDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="activityDescription"
+                        rows="3"
+                        placeholder="Describe what you learned or completed..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="activityType">
+                        Activity Type
+                    </label>
+
+                    <select
+                        id="activityType"
+                        required
+                    >
+
+                        <option value="">
+                            Select type
+                        </option>
+
+                        <option value="course">
+                            Course
+                        </option>
+
+                        <option value="practice">
+                            Practice
+                        </option>
+
+                        <option value="project">
+                            Project
+                        </option>
+
+                        <option value="workshop">
+                            Workshop
+                        </option>
+
+                        <option value="reading">
+                            Reading
+                        </option>
+
+                        <option value="other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="activitySkill">
+                        Skill
+                    </label>
+
+                    <input
+                        type="text"
+                        id="activitySkill"
+                        placeholder="Example: JavaScript"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="activityDuration">
+                        Duration (minutes)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="activityDuration"
+                        min="0"
+                        placeholder="Example: 60"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="activityDate">
+                        Activity Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="activityDate"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="activityGoal">
+                        Related Goal
+                    </label>
+
+                    <select id="activityGoal">
+
+                        <option value="">
+                            No specific goal
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="cancelActivityBtn"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                    >
+                        Save Activity
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/storage.js"></script>
+
+    <script src="js/common.js"></script>
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
