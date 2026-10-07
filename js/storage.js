@@ -127,3 +127,126 @@ function clearCurrentUser() {
 function isLoggedIn() {
     return getCurrentUser() !== null;
 }
+/* =====================================================
+   PROFILE STORAGE
+   ===================================================== */
+
+function getUserProfile(userId) {
+
+    const profiles = getData(
+        STORAGE_KEYS.PROFILES,
+        []
+    );
+
+    return profiles.find(
+        profile => profile.userId === userId
+    ) || null;
+}
+
+
+function createUserProfile(userId) {
+
+    const profiles = getData(
+        STORAGE_KEYS.PROFILES,
+        []
+    );
+
+
+    const existingProfile = profiles.find(
+        profile => profile.userId === userId
+    );
+
+
+    if (existingProfile) {
+        return existingProfile;
+    }
+
+
+    const newProfile = {
+
+        id: generateId("profile"),
+
+        userId: userId,
+
+        bio: "",
+
+        location: "",
+
+        education: "",
+
+        createdAt: new Date().toISOString(),
+
+        updatedAt: new Date().toISOString()
+
+    };
+
+
+    profiles.push(newProfile);
+
+    saveData(
+        STORAGE_KEYS.PROFILES,
+        profiles
+    );
+
+
+    return newProfile;
+}
+/* =====================================================
+   PROFILE STORAGE
+   ===================================================== */
+
+function getUserProfile(userId) {
+
+    const profiles = getData(
+        STORAGE_KEYS.PROFILES,
+        []
+    );
+
+    return profiles.find(
+        profile => profile.userId === userId
+    ) || null;
+}
+
+
+function createUserProfile(userId) {
+
+    const profiles = getData(
+        STORAGE_KEYS.PROFILES,
+        []
+    );
+
+    const existingProfile = profiles.find(
+        profile => profile.userId === userId
+    );
+
+    if (existingProfile) {
+        return existingProfile;
+    }
+
+    const newProfile = {
+
+        id: generateId("profile"),
+
+        userId: userId,
+
+        bio: "",
+
+        location: "",
+
+        education: "",
+
+        createdAt: new Date().toISOString(),
+
+        updatedAt: new Date().toISOString()
+
+    };
+
+    profiles.push(newProfile);
+
+    saveData(
+        STORAGE_KEYS.PROFILES,
+        profiles
+    );
+
+    return newProfile;
+}

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | Community-Skill-Exchange</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+    <main class="profile-page">
+
+        <!-- Profile Header -->
+        <section class="profile-hero">
+
+            <div class="container">
+
+                <div class="profile-hero-content">
+
+                    <div class="profile-avatar-large">
+                        <span id="profileInitial">U</span>
+                    </div>
+
+                    <div class="profile-hero-info">
+
+                        <span class="profile-badge">
+                            Community Member
+                        </span>
+
+                        <h1 id="profileName">Loading...</h1>
+
+                        <p id="profileEmail">
+                            Loading...
+                        </p>
+
+                        <p class="profile-description">
+                            Build your profile, share your skills,
+                            and connect with people who can help you grow.
+                        </p>
+
+                    </div>
+
+                    <div class="profile-hero-action">
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="editProfileButton">
+
+                            Edit Profile
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Profile Content -->
+        <section class="section profile-content">
+
+            <div class="container">
+
+                <div class="profile-grid">
+
+                    <!-- Personal Information -->
+                    <section class="profile-card">
+                        <!-- Edit Profile Form -->
+<div id="editProfileFormContainer" class="edit-profile-form-container">
+
+    <form id="editProfileForm">
+
+        <div class="form-grid">
+
+            <!-- Full Name -->
+            <div class="form-group">
+
+                <label for="editName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="editName"
+                    name="editName"
+                    placeholder="Enter your full name"
+                    maxlength="50"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Location -->
+            <div class="form-group">
+
+                <label for="editLocation">
+                    Location
+                </label>
+
+                <input
+                    type="text"
+                    id="editLocation"
+                    name="editLocation"
+                    placeholder="e.g. Hyderabad, Telangana"
+                    maxlength="100"
+                >
+
+            </div>
+
+
+            <!-- Education -->
+            <div class="form-group">
+
+                <label for="editEducation">
+                    Education
+                </label>
+
+                <input
+                    type="text"
+                    id="editEducation"
+                    name="editEducation"
+                    placeholder="e.g. B.Tech Computer Science"
+                    maxlength="150"
+                >
+
+            </div>
+
+
+            <!-- Bio -->
+            <div class="form-group form-group-full">
+
+                <label for="editBio">
+                    About Me
+                </label>
+
+                <textarea
+                    id="editBio"
+                    name="editBio"
+                    rows="5"
+                    maxlength="300"
+                    placeholder="Tell the community a little about yourself..."
+                ></textarea>
+
+                <small>
+                    Maximum 300 characters
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- Form Actions -->
+        <div class="edit-form-actions">
+
+            <button
+                type="button"
+                class="btn btn-outline"
+                id="cancelEditButton">
+
+                Cancel
+
+            </button>
+
+            <button
+                type="submit"
+                class="btn btn-primary">
+
+                Save Changes
+
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+                        <div class="profile-card-header">
+
+                            <div>
+                                <span class="card-icon">👤</span>
+
+                                <div>
+                                    <h2>Personal Information</h2>
+
+                                    <p>
+                                        Your basic profile information
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="profile-info-grid">
+
+                            <div class="profile-info-item">
+
+                                <span class="profile-label">
+                                    Full Name
+                                </span>
+
+                                <strong id="displayName">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="profile-info-item">
+
+                                <span class="profile-label">
+                                    Email Address
+                                </span>
+
+                                <strong id="displayEmail">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="profile-info-item">
+
+                                <span class="profile-label">
+                                    Location
+                                </span>
+
+                                <strong id="displayLocation">
+                                    Not added
+                                </strong>
+
+                            </div>
+
+
+                            <div class="profile-info-item">
+
+                                <span class="profile-label">
+                                    Education
+                                </span>
+
+                                <strong id="displayEducation">
+                                    Not added
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="profile-bio-section">
+
+                            <span class="profile-label">
+                                About Me
+                            </span>
+
+                            <p id="displayBio">
+                                No bio added yet.
+                            </p>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- Skills -->
+                    <section class="profile-card">
+
+                        <div class="profile-card-header">
+
+                            <div>
+                                <span class="card-icon">✨</span>
+
+                                <div>
+                                    <h2>Skills</h2>
+
+                                    <p>
+                                        Skills you can teach and want to learn
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="skills-section">
+
+                            <!-- Teaching -->
+                            <div class="skill-group">
+
+                                <div class="skill-group-title">
+
+                                    <span class="skill-icon teach-icon">
+                                        ↑
+                                    </span>
+
+                                    <div>
+                                        <h3>Skills I Can Teach</h3>
+
+                                        <p>
+                                            Knowledge you can share
+                                        </p>
+                                    </div>
+
+                                </div>
+
+
+                                <div
+                                    id="teachingSkills"
+                                    class="skill-list">
+
+                                    <span class="empty-state">
+                                        No skills added yet.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Learning -->
+                            <div class="skill-group">
+
+                                <div class="skill-group-title">
+
+                                    <span class="skill-icon learn-icon">
+                                        ↓
+                                    </span>
+
+                                    <div>
+                                        <h3>Skills I Want to Learn</h3>
+
+                                        <p>
+                                            Skills you want to develop
+                                        </p>
+                                    </div>
+
+                                </div>
+
+
+                                <div
+                                    id="learningSkills"
+                                    class="skill-list">
+
+                                    <span class="empty-state">
+                                        No skills added yet.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- Community Progress Preview -->
+                    <section class="profile-card profile-card-full">
+
+                        <div class="profile-card-header">
+
+                            <div>
+                                <span class="card-icon">📈</span>
+
+                                <div>
+                                    <h2>Learning Journey</h2>
+
+                                    <p>
+                                        Your progress in the community
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="profile-stat-grid">
+
+                            <div class="profile-stat">
+
+                                <span class="stat-number">
+                                    0
+                                </span>
+
+                                <span class="stat-label">
+                                    Skills Teaching
+                                </span>
+
+                            </div>
+
+
+                            <div class="profile-stat">
+
+                                <span class="stat-number">
+                                    0
+                                </span>
+
+                                <span class="stat-label">
+                                    Skills Learning
+                                </span>
+
+                            </div>
+
+
+                            <div class="profile-stat">
+
+                                <span class="stat-number">
+                                    0
+                                </span>
+
+                                <span class="stat-label">
+                                    Connections
+                                </span>
+
+                            </div>
+
+
+                            <div class="profile-stat">
+
+                                <span class="stat-number">
+                                    0
+                                </span>
+
+                                <span class="stat-label">
+                                    Goals Completed
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <div id="footer"></div>
+
+
+    <!-- JavaScript -->
+    <script src="js/storage.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/auth.js"></script>
+
+    <script>
+        protectPage();
+    </script>
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
